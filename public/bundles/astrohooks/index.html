@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrohooks</title>
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/practicas_styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/2e617aaa67.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="./components/components.js"></script>
+    <script src="./js/atomic.js"></script>
+    <script src="./js/calc.js"></script>
+    <script src="./js/canvas.js"></script>
+</head>
+<body><div id="app">
+    <v-header></v-header>
+    <div class="flexbox" id="body-container">
+        <v-sidebar></v-sidebar>
+
+        <div id="content">
+            <div class="content-block titulo-pdf" id="resume">
+                <h1>Resumen  </h1><a style="color: rgb(86, 131, 255);" v-on:click="show_resume()" target="_blank" role="button"><i class="fas fa-chevron-circle-down fa-lg" id="resume-button"></i></a>
+                <div class="resume-contract" id="resume-p">
+                    <p>{{ resume_description }}</p>
+                </div>
+            </div>
+
+
+<br><hr><br>
+
+<div class="content-block" id="practica1">
+    <pdf-resource :index=1></pdf-resource>
+
+    <div class="px">
+        <p>Convertir los datos de entrada a los otros formatos disponibles
+		<div class="form-floating">
+            <div class="row">
+                <div class="col">
+                    <select id="p1-1-select" onchange="p1_1_change_type()" >
+                        <option value="p1-x1" selected>Grados con decimales</option>
+                        <option value="p1-x2">Grados, minutos y segundos</option>
+                        <option value="p1-x3">Radianes</option>
+                        <option value="p1-x4">Horas, minutos y segundos</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <button type="button" onclick="p1_1_clean()" class="btn btn-primary">Limpiar campos</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-floating visible" id="p1-x1">
+            <div class="row">
+                <div class="col"><input type="number" id="p1-x1-i1" onchange="p1_x1_calc()" class="form-control" placeholder="Grados con decimales (ej: 345.7)" min="0" max="360" required></div>
+            </div>
+            <div class="row"><center>
+                <div><input type="textarea" id="p1-x1-o1" class="form-control form-resultado" placeholder="[ °, ', '' ]" readonly></div>
+            </center></div>
+        </div>
+
+        <div class="form-floating invisible" id="p1-x2">
+            <div class="row">
+                <div class="col"><input type="number" id="p1-x2-i1" onchange="p1_x2_calc()" class="form-control" placeholder="Grados" min="0" max="359" required></div>
+                <div class="col"><input type="number" id="p1-x2-i2" onchange="p1_x2_calc()" class="form-control" placeholder="Minutos" min="0" max="59"></div>
+                <div class="col"><input type="number" id="p1-x2-i3" onchange="p1_x2_calc()" class="form-control" placeholder="Segundos" min="0" max="59"></div>
+            </div>
+            <div class="row"><center>
+                <div><input type="textarea" id="p1-x2-o1" class="form-control form-resultado" placeholder="[ angulos ]" readonly></div>
+                <div><input type="textarea" id="p1-x2-o2" class="form-control form-resultado" placeholder="[ radianes ]" readonly></div>
+                <div><input type="textarea" id="p1-x2-o3" class="form-control form-resultado" placeholder="[ hs, min, seg ]" readonly></div>
+            </center></div>
+        </div>
+
+        <div class="form-floating invisible" id="p1-x3">
+            <div class="row">
+                <div class="col"><input type="number" id="p1-x3-i1" onchange="p1_x3_calc()" class="form-control" placeholder="Radianes" min="0" required></div>
+            </div>
+            <div class="row"><center>
+                <div><input type="textarea" id="p1-x3-o1" class="form-control form-resultado" placeholder="[ angulos ]" readonly></div>
+                <div><input type="textarea" id="p1-x3-o2" class="form-control form-resultado" placeholder="[ °, ', '' ]" readonly></div>
+                <div><input type="textarea" id="p1-x3-o3" class="form-control form-resultado" placeholder="[ hs, min, seg ]" readonly></div>
+            </center></div>
+        </div>
+
+        <div class="form-floating invisible" id="p1-x4">
+            <div class="row">
+                <div class="col"><input type="number" id="p1-x4-i1" onchange="p1_x4_calc()" class="form-control" placeholder="Horas" min="0" max="23" required></div>
+                <div class="col"><input type="number" id="p1-x4-i2" onchange="p1_x4_calc()" class="form-control" placeholder="Minutos" min="0" max="59"></div>
+                <div class="col"><input type="number" id="p1-x4-i3" onchange="p1_x4_calc()" class="form-control" placeholder="Segundos" min="0" max="59"></div>
+            </div>
+            <div class="row"><center>
+                <div><input type="textarea" id="p1-x4-o1" class="form-control form-resultado" placeholder="[ angulos ]" readonly></div>
+                <div><input type="textarea" id="p1-x4-o2" class="form-control form-resultado" placeholder="[ radianes ]" readonly></div>
+                <div><input type="textarea" id="p1-x4-o3" class="form-control form-resultado" placeholder="[ °, ', '' ]" readonly></div>
+            </center></div>
+        </div>
+    </div>  
+
+    <br><br>
+
+    <div class="px">
+        <p>Calcular funciones trigonométricas a partir de un ángulo o radianes</p>
+        <div class="form-floating">
+            <div class="row">
+                <div class="col">
+                    <select id="p1-2-select" onchange="p1_2_change_type()">
+                        <option value="p1-x5-1" selected>Grados</option>
+                        <option value="p1-x5-2">Radianes</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <button type="button" onclick="px_clean('p1-x5')" class="btn btn-primary">Limpiar campos</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-floating visible" id="p1-x5">
+            <div class="row">
+                <div class="col"><input type="number" id="p1-x5-i1" onchange="p1_x5_calc()" class="form-control" placeholder="¿Grados o Radianes?" min="0" max="360" required></div>
+            </div>
+            <div class="row"><center>
+                <div><input type="textarea" id="p1-x5-o1" class="form-control form-resultado" placeholder="[ cuadrante ]" readonly></div>
+                <div><input type="textarea" id="p1-x5-o2" class="form-control form-resultado" placeholder="[ seno ]" readonly></div>
+                <div><input type="textarea" id="p1-x5-o3" class="form-control form-resultado" placeholder="[ coseno ]" readonly></div>
+                <div><input type="textarea" id="p1-x5-o4" class="form-control form-resultado" placeholder="[ tangente ]" readonly></div>
+                <div><input type="textarea" id="p1-x5-o5" class="form-control form-resultado" placeholder="[ cosecante ]" readonly></div>
+                <div><input type="textarea" id="p1-x5-o6" class="form-control form-resultado" placeholder="[ secante ]" readonly></div>
+                <div><input type="textarea" id="p1-x5-o7" class="form-control form-resultado" placeholder="[ cotangente ]" readonly></div>
+                <div><input type="textarea" id="p1-x5-o8" class="form-control form-resultado" placeholder="[ arco ]" readonly></div>
+                <div><input type="textarea" id="p1-x5-o9" class="form-control form-resultado" placeholder="[ cuerda (radio = 1) ]" readonly></div>
+            </center></div>
+        </div>
+
+    </div>
+</div>
+
+<br><hr><br>
+
+<div class="content-block" id="practica3" id="practica2">
+    <pdf-resource :index=2></pdf-resource>
+    <pdf-resource :index=3></pdf-resource>
+
+	<div class="px">
+        <p>Dibujar las trayectorias diurnas de un observador en cierta latitud</p>
+        <div class="form-floating">
+			<div class="row">
+				<div class="col">
+					<button type="button" onclick="px_clean('p3-x1')" class="btn btn-primary">Limpiar campos</button>
+				</div>
+				Ver trayectorias diurnas
+				<div class="col">
+					<label class="switch">
+						<input id="p3-trayectorias-switch" onchange="p3_x1_calc();" type="checkbox">
+						<span class="slider round"></span>
+					</label>	
+				</div>
+			</div>
+        </div>
+
+        <div class="form-floating visible" id="p3-x1">
+            <div class="row">
+                <div class="col"><input type="number" id="p3-x1-i1" onchange="p3_x1_calc()" class="form-control" placeholder="Grados" min="-89" max="89" value="-34" required></div>
+                <div class="col"><input type="number" id="p3-x1-i2" onchange="p3_x1_calc()" class="form-control" placeholder="Minutos" min="0" max="59"></div>
+                <div class="col"><input type="number" id="p3-x1-i3" onchange="p3_x1_calc()" class="form-control" placeholder="Segundos" min="0" max="59"></div>
+            </div>
+            <div class="row"><center>
+                <div><canvas height="300px" width="430px" id="canvas-p3"></canvas></div>
+            </center></div>
+        </div>
+
+    </div>
+</div>
+
+<br><hr><br>
+
+<div class="content-block" id="practica4">
+    <pdf-resource :index=4></pdf-resource>
+	<div class="px">
+        <p>Dibujar un astro dado el acimutal, altura o distancia cenital, y latitud</p>
+        <div class="form-floating">
+			<div class="row">
+				<div class="col">
+					<button type="button" onclick="px_clean('p4-x1')" class="btn btn-primary">Limpiar campos</button>
+				</div>
+			</div>
+        </div>
+
+        <div class="form-floating visible" id="p4-x1">
+            <div class="row">
+				<div class="col" id="text-pide-parametro">A = </div>
+				<div class="col"><input type="number" id="p4-x1-i1" onchange="p4_x1_calc()" value="30" class="form-control" placeholder="Acimut" min="0" max="360" step="2" required></div>
+				<div class="col" id="text-pide-parametro">Lat = </div>
+				<div class="col"><input type="number" id="p4-x1-i2" onchange="p4_x1_calc()" value="30" class="form-control" placeholder="Latitud" min="-90" max="90" step="2" required></div>   
+			</div>
+			<div class="row">
+				<div class="col" id="text-pide-parametro">h = </div>
+				<div class="col"><input type="number" id="p4-x1-i3" onchange="p4_update_z(); p4_x1_calc();" value="-38" class="form-control" placeholder="Altura h" min="-90" max="90" step="2" required></div>
+				<div class="col" id="text-pide-parametro">z = </div>
+				<div class="col"><input type="number" id="p4-x1-i4" onchange="p4_update_h();p4_x1_calc()" class="form-control" placeholder="Distancia z" min="0" max="180" step="2" required></div>
+            </div>
+            <div class="row"><center>
+                <div><canvas height="425px" width="425px" id="canvas-p4"></canvas></div>
+            </center></div>
+        </div>
+
+    </div>
+</div>
+
+<br><hr><br>
+
+<div class="content-block" id="practica5">
+    <pdf-resource :index=5></pdf-resource>
+</div>
+
+<br><hr><br>
+
+<div class="content-block" id="practica6">
+    <pdf-resource :index=6></pdf-resource>
+</div>
+
+<br><hr><br>
+
+<div class="content-block" id="practica7">
+    <pdf-resource :index=7></pdf-resource>
+</div>
+
+
+        </div>
+    </div>
+    <v-footer></v-footer>    
+    <script src="./js/index.js"></script>
+</div></body>
+</html>

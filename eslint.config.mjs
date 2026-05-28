@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Bundled legacy static projects rendered through iframes.
+    "public/bundles/**",
   ]),
 ]);
 

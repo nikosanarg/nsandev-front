@@ -1,0 +1,73 @@
+.visible {
+    display: block;
+}
+
+.invisible {
+    display: none;
+}
+
+.form-floating .form-control{
+    margin-top: 25px;
+    color: black;
+    width: 100%;
+    border-color: rgba(86, 20, 161, 0.5);
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    background:rgba(248, 255, 147, 0.548);
+}
+
+.form-floating .form-resultado:read-only {
+    background:rgba(123, 255, 46, 0.459);
+    text-align: center;
+    max-width: 75%;
+}
+
+select {
+    height: 36px;
+    width: 80%;
+    border-radius: 4px;
+    border-color: rgba(161, 20, 161, 0.5);
+    background-color: rgba(233, 255, 255, 0.863);
+    color: rgb(9, 0, 92);
+    font-size: 14px;
+}
+
+.px {
+    padding: 15px;
+    border-radius: 15px;
+	max-width: 650px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.37);   
+}
+
+.px p {
+	color: rgb(31, 121, 255);
+    font-size: 18px;
+}
+
+#text-pide-parametro {
+	padding-top: 30px;
+	padding-left: 30px;
+	max-width: 80px;
+}
+
+canvas {
+    height: 300px;
+    width: 500px;
+    margin-top: 10px;
+}
+
+#canvas-p4 {
+	height: 90%;
+	width: 90%;
+	max-width: 425px;
+	max-height: 425px;
+}
+
+#canvas-p3 {
+	height: 90%;
+	width: 90%;
+	max-width: 430px;
+	max-height: 300px;
+}

@@ -1,0 +1,55 @@
+/* 
+GOOGLE FONTS:
+font-family: 'Goldman', cursive;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Teko', sans-serif;
+*/
+
+* {
+    margin: 0;
+    font-family: 'Teko', sans-serif;
+    font-style: italic;
+    text-align: center;
+}
+
+body {
+    background: rgb(38,0,73);
+    background: linear-gradient(180deg, rgba(38,0,73,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 85%, rgba(38,0,73,1) 100%);
+}
+
+a {
+    text-decoration: none;
+}
+
+#title {
+    font-family: 'Goldman', cursive;
+    font-size: 55px;
+    color: rgb(160, 255, 207);
+}
+
+#black-hole-o {
+    padding-bottom: 24px;
+    vertical-align: middle;
+}
+
+#slogan {
+    font-family: 'Josefin Sans', sans-serif;
+    color:rgb(208, 253, 253);
+}
+
+#canvas {
+    margin: 0 auto;
+    display: none;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 30px black;
+    cursor: crosshair;
+}
+
+#canvasWindow {
+    padding-top: 1%;
+}
+
+#indexWindow {
+    display: block;
+}
+

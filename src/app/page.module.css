@@ -22,12 +22,13 @@
   display: flex;
   flex: 1;
   width: 100%;
-  max-width: 800px;
+  max-width: 1080px;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 52px;
   background-color: var(--foreground);
-  padding: 120px 60px;
+  padding: 88px 56px;
 }
 
 .intro {
@@ -59,6 +60,32 @@
 .intro a {
   font-weight: 500;
   color: var(--text-primary);
+}
+
+.intro hr {
+  width: 48px;
+  border: 1px solid var(--text-primary);
+}
+
+.previewSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.previewSection h2 {
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: -1px;
+  color: var(--text-primary);
+}
+
+.previewSection p {
+  max-width: 100%;
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--text-secondary);
 }
 
 .ctas {
@@ -109,7 +136,8 @@ a.secondary {
 
 @media (max-width: 600px) {
   .main {
-    padding: 48px 24px;
+    gap: 32px;
+    padding: 42px 18px;
   }
 
   .intro {
@@ -120,6 +148,16 @@ a.secondary {
     font-size: 32px;
     line-height: 40px;
     letter-spacing: -1.92px;
+  }
+
+  .previewSection h2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .previewSection p {
+    font-size: 15px;
+    line-height: 24px;
   }
 }
 

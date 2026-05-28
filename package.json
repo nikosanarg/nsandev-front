@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:portfolio": "next dev -p 3001",
+    "dev:sagitar-io": "npm --prefix ../sagitar.io run dev",
+    "dev:full": "concurrently -k -n MONOLITH,PORTFOLIO \"npm run dev:sagitar-io\" \"npm run dev:portfolio\"",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -11,12 +14,14 @@
   "dependencies": {
     "next": "16.2.6",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "styled-components": "^6.4.2"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.2.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "typescript": "^5"
