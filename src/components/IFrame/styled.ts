@@ -3,19 +3,26 @@ import styled from "styled-components";
 type ShellProps = {
   $height: string;
   $zoom: number;
+  $aspectRatio: number;
+};
+
+type ViewportProps = {
+  $responsiveAspectRatio: boolean;
 };
 
 export const Shell = styled.section<ShellProps>`
   --iframe-height: ${({ $height }) => $height};
   --iframe-zoom: ${({ $zoom }) => $zoom};
-  --iframe-scale-factor: ${({ $zoom }) => (1 / $zoom).toFixed(4)};
+  --iframe-scale-factor: ${({ $zoom }) => 1 / $zoom};
+  --iframe-aspect-ratio: ${({ $aspectRatio }) => $aspectRatio};
+  --iframe-overscan: 2px;
 
   width: 100%;
-  border: 1px solid #d7d7d7;
+  border: 1px solid #1e1e1e;
   border-radius: 16px;
   overflow: hidden;
-  background: linear-gradient(180deg, #fcfcfc 0%, #f2f2f2 100%);
-  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.16);
+  background: linear-gradient(180deg, #070b1f 0%, #0a1230 100%);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.28);
 
   @media (max-width: 900px) {
     border-radius: 12px;
@@ -28,7 +35,7 @@ export const Toolbar = styled.header`
   justify-content: space-between;
   gap: 12px;
   padding: 10px 14px;
-  background-color: #0f172a;
+  background-color: #090909;
 
   @media (max-width: 900px) {
     padding: 8px 10px;
@@ -99,22 +106,23 @@ export const LocalBadge = styled.span`
   background-color: #1e293b;
 `;
 
-export const Viewport = styled.div`
+export const Viewport = styled.div<ViewportProps>`
   width: 100%;
-  height: var(--iframe-height);
-  background-color: #111827;
-
-  @media (max-width: 900px) {
-    height: min(72vh, var(--iframe-height));
-  }
+  height: ${({ $responsiveAspectRatio }) =>
+    $responsiveAspectRatio ? "auto" : "var(--iframe-height)"};
+  aspect-ratio: ${({ $responsiveAspectRatio }) =>
+    $responsiveAspectRatio ? "var(--iframe-aspect-ratio)" : "auto"};
+  background-color: #020a25;
+  overflow: hidden;
 `;
 
 export const Frame = styled.iframe`
   display: block;
-  width: calc(100% * var(--iframe-scale-factor));
-  height: calc(100% * var(--iframe-scale-factor));
+  width: calc((100% * var(--iframe-scale-factor)) + var(--iframe-overscan));
+  height: calc((100% * var(--iframe-scale-factor)) + var(--iframe-overscan));
   border: 0;
   background-color: #ffffff;
   transform: scale(var(--iframe-zoom));
   transform-origin: top left;
+  will-change: transform;
 `;

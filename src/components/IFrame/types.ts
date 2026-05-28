@@ -4,4 +4,6 @@ export type IFrameProps = {
   htmlContent?: string;
   height?: number | string;
   zoom?: number;
+  responsiveAspectRatio?: boolean;
+  aspectRatio?: number;
 };
