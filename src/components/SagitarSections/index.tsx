@@ -32,7 +32,7 @@ const SECTIONS: SagitarSection[] = [
     height: 600,
     responsiveAspectRatio: true,
     aspectRatio: 1200 / 600,
-    description: "Primera version Alpha de Sagitar.io.",
+    description: "Alpha de Sagitar.io, para practicar con el canvas de Javascript.",
   },
   {
     id: "beta-v05",
@@ -42,7 +42,7 @@ const SECTIONS: SagitarSection[] = [
     height: 544,
     responsiveAspectRatio: true,
     aspectRatio: 16 / 9,
-    description: "Version beta v0.5, estatica y deploy-safe para portfolio.",
+    description: "Beta de Sagitar.io, primer intento con sockets para hacer un multiplayer (bundle single-player).",
   },
 ];
 
