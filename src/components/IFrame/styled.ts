@@ -19,13 +19,13 @@ export const Shell = styled.section<ShellProps>`
 
   width: 100%;
   border: 1px solid #1e1e1e;
-  border-radius: 16px;
+  border-radius: 24px;
   overflow: hidden;
   background: linear-gradient(180deg, #070b1f 0%, #0a1230 100%);
   box-shadow: 0 20px 44px rgba(0, 0, 0, 0.28);
 
   @media (max-width: 900px) {
-    border-radius: 12px;
+    border-radius: 18px;
   }
 `;
 
