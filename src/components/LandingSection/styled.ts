@@ -7,7 +7,9 @@ export const StyledLandingSectionWrapper = styled.section`
   gap: 16px;
 
   h2 {
+    font-family: var(--font-faculty-glyphic), serif;
     font-size: 28px;
+    font-weight: 400;
     line-height: 34px;
     letter-spacing: -1px;
     color: var(--text-primary);
@@ -16,8 +18,8 @@ export const StyledLandingSectionWrapper = styled.section`
 
 
 export const StyledSectionDescription = styled.p`
-  max-width: 100%;
+  max-width: 40rem;
   font-size: 16px;
-  line-height: 28px;
+  line-height: 16px;
   color: var(--text-secondary);
 `;

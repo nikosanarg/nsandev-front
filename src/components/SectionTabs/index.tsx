@@ -1,26 +1,36 @@
 "use client";
 
-import type { ReactNode } from "react";
+import "@/i18n";
+import type { ComponentType } from "react";
 import { useState } from "react";
-import { Panel, ProductsPlaceholder, TabButton, TabsRow, Wrapper } from "./styled";
+import { useTranslation } from "react-i18next";
+import TabBiography from "./TabBiography";
+import TabLegacy from "./TabLegacy";
+import TabProducts from "./TabProducts";
+import { Panel, TabButton, TabsRow, Wrapper } from "./styled";
 
-type SectionTabId = "legacy" | "productos";
+type SectionTabId = "biografia" | "productos" | "legacy";
 
-type SectionTabsProps = {
-  children: ReactNode;
-};
-
-const TABS: { id: SectionTabId; label: string }[] = [
-  { id: "legacy", label: "Legacy" },
-  { id: "productos", label: "Productos" },
+const TABS: { id: SectionTabId; labelKey: string }[] = [
+  { id: "biografia", labelKey: "tabs.biography" },
+  { id: "productos", labelKey: "tabs.products" },
+  { id: "legacy", labelKey: "tabs.legacy" },
 ];
 
-export default function SectionTabs({ children }: SectionTabsProps) {
+const TAB_COMPONENTS: Record<SectionTabId, ComponentType> = {
+  biografia: TabBiography,
+  productos: TabProducts,
+  legacy: TabLegacy,
+};
+
+export default function SectionTabs() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<SectionTabId>("legacy");
+  const ActiveTabComponent = TAB_COMPONENTS[activeTab];
 
   return (
     <Wrapper>
-      <TabsRow role="tablist" aria-label="Secciones del portfolio">
+      <TabsRow role="tablist" aria-label={t("tabs.ariaLabel")}>
         {TABS.map((tab) => {
           const isActive = tab.id === activeTab;
 
@@ -33,21 +43,14 @@ export default function SectionTabs({ children }: SectionTabsProps) {
               $active={isActive}
               onClick={() => setActiveTab(tab.id)}
             >
-              {tab.label}
+              {t(tab.labelKey)}
             </TabButton>
           );
         })}
       </TabsRow>
 
       <Panel>
-        {activeTab === "legacy" ? (
-          children
-        ) : (
-          <ProductsPlaceholder>
-            Cargando proyectos en producción o en proceso de desploy
-            productivo
-          </ProductsPlaceholder>
-        )}
+        <ActiveTabComponent />
       </Panel>
     </Wrapper>
   );

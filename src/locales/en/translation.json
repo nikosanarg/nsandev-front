@@ -1,0 +1,47 @@
+{
+  "tabs": {
+    "biography": "Biography",
+    "products": "Products",
+    "legacy": "Legacy",
+    "ariaLabel": "Portfolio sections"
+  },
+  "languageSwitcher": {
+    "ariaLabel": "Select language",
+    "es": "Spanish (Spain)",
+    "es-AR": "Spanish (Argentina)",
+    "pt": "Portuguese",
+    "en": "English"
+  },
+  "biography": {
+    "noInfo": "No information available yet.",
+    "q1": "Who are you, where are you from, and what do you currently do?",
+    "q2": "How did your interest in programming start, and what hooked you at first?",
+    "q3": "What were your first projects or experiments, and what did you learn from them?",
+    "q4": "Which technologies or frameworks do you use today, and why do you choose them?",
+    "q5": "Which personal or professional achievements have marked you the most so far?",
+    "q6": "What kinds of problems do you enjoy solving, and in which areas do you want to grow?",
+    "q7": "What is your way of working like (teamwork, leadership, product, execution)?",
+    "q8": "What are you building now, and what is your next goal?"
+  },
+  "products": {
+    "loading": "Loading projects in production or in productive deploy process"
+  },
+  "legacy": {
+    "santandev": {
+      "title": "A/B Talk - SantanDev (2022)",
+      "description": "Talk presented at SantanDev, the event for developers organized by Santander in 2022. I explained how A/B experiments work in web development and in real production systems.",
+      "videoTitle": "SantanDev 2022 - Talk about A/B experiments"
+    },
+    "jodalok": {
+      "title": "Dale Aceptar (2013)",
+      "description": "Gameplay of \"JodaloK\", a game built in Alice for Dale Aceptar 2013, a programming contest by Nación and Fundación Sadosky. I won first place in the advanced individual category during my last year of high school.",
+      "videoTitle": "Dale Aceptar 2013 - JodaloK gameplay"
+    },
+    "astrohooks": {
+      "title": "Astrohooks"
+    },
+    "sagitar": {
+      "title": "Sagitar.io"
+    }
+  }
+}

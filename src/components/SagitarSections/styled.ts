@@ -18,7 +18,9 @@ export const Header = styled.div`
 `;
 
 export const Title = styled.h2`
+  font-family: var(--font-faculty-glyphic), serif;
   font-size: 28px;
+  font-weight: 400;
   line-height: 34px;
   letter-spacing: -1px;
   color: var(--text-primary);

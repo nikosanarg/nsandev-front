@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Faculty_Glyphic, Nunito } from "next/font/google";
 import "./globals.css";
 import StarField from "@/components/StarField";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const facultyGlyphic = Faculty_Glyphic({
+  variable: "--font-faculty-glyphic",
+  weight: "400",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const nunito = Nunito({
+  variable: "--font-nunito",
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -34,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${facultyGlyphic.variable} ${nunito.variable}`}>
       <body>
         {children}
         <StarField {...STARFIELD_CONFIG} />

@@ -1,0 +1,47 @@
+{
+  "tabs": {
+    "biography": "Biografía",
+    "products": "Productos",
+    "legacy": "Legacy",
+    "ariaLabel": "Secciones del portfolio"
+  },
+  "languageSwitcher": {
+    "ariaLabel": "Seleccionar idioma",
+    "es": "Español (España)",
+    "es-AR": "Español (Argentina)",
+    "pt": "Portugués",
+    "en": "Inglés"
+  },
+  "biography": {
+    "noInfo": "Sin información disponible todavía.",
+    "q1": "¿Quién sos, de dónde sos y a qué te dedicás actualmente?",
+    "q2": "¿Cómo empezó tu interés por la programación y qué te enganchó al principio?",
+    "q3": "¿Cuáles fueron tus primeros proyectos o experimentos y qué aprendiste de ellos?",
+    "q4": "¿Qué tecnologías o frameworks usás hoy y por qué los elegís?",
+    "q5": "¿Qué logros personales o profesionales te marcaron más hasta ahora?",
+    "q6": "¿Qué tipo de problemas te gusta resolver y en qué áreas querés crecer?",
+    "q7": "¿Cómo es tu forma de laburo (equipo, liderazgo, producto, ejecución)?",
+    "q8": "¿Qué estás construyendo ahora y cuál es tu próximo objetivo?"
+  },
+  "products": {
+    "loading": "Cargando proyectos en producción o en proceso de desploy productivo"
+  },
+  "legacy": {
+    "santandev": {
+      "title": "Charla A/B - SantanDev (2022)",
+      "description": "Charla dada en SantanDev, el evento para desarrolladores organizado por Santander en 2022. Explicamos cómo funcionan los experimentos A/B en el contexto del desarrollo web y su implementación en sistemas reales.",
+      "videoTitle": "SantanDev 2022 - Charla sobre experimentos A/B"
+    },
+    "jodalok": {
+      "title": "Dale Aceptar (2013)",
+      "description": "Gameplay de \"JodaloK\", un videojuego hecho en Alice para Dale Aceptar 2013, concurso de programación de Nación junto a Fundación Sadosky. Gané el primer puesto en categoría individual avanzado durante mi último año del secundario.",
+      "videoTitle": "Dale Aceptar 2013 - JodaloK gameplay"
+    },
+    "astrohooks": {
+      "title": "Astrohooks"
+    },
+    "sagitar": {
+      "title": "Sagitar.io"
+    }
+  }
+}

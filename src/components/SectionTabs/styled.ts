@@ -20,18 +20,19 @@ export const TabsRow = styled.div`
 `;
 
 export const TabButton = styled.button<TabButtonProps>`
-  border: 1px solid rgba(124, 145, 198, 0.42);
+  border: 0px solid rgba(102, 118, 150, 0.36);
   border-bottom: 0;
   background: ${({ $active }) =>
     $active
-      ? "linear-gradient(180deg, #0f1f4a 0%, #0a1535 100%)"
-      : "linear-gradient(180deg, #050505 0%, #090909 100%)"};
-  color: ${({ $active }) => ($active ? "#8fd3ff" : "#ecf2ff")};
+      ? "linear-gradient(180deg, #202b43 0%, #141d33 100%)"
+      : "linear-gradient(180deg, #07090f 0%, #0c0f17 100%)"};
+  color: ${({ $active }) => ($active ? "#b8c8e2" : "#c9d3e3")};
   min-width: 170px;
   padding: 16px 22px;
   font-size: 20px;
   line-height: 20px;
-  font-weight: 700;
+  font-weight: 500;
+  font-family: var(--font-faculty-glyphic), serif;
   letter-spacing: -0.2px;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -42,18 +43,16 @@ export const TabButton = styled.button<TabButtonProps>`
   ${({ $active }) =>
     $active &&
     `
-      border-top: 4px solid #69c5ff;
       padding-top: 13px;
       z-index: 2;
-      box-shadow: 0 -6px 16px rgba(64, 130, 255, 0.28);
     `}
 
   &:hover {
-    color: ${({ $active }) => ($active ? "#c5eaff" : "#ffffff")};
+    color: ${({ $active }) => ($active ? "#cfdbec" : "#e3e9f4")};
   }
 
   &:focus-visible {
-    outline: 2px solid #69c5ff;
+    outline: 2px solid #8ea2c7;
     outline-offset: 2px;
   }
 
@@ -74,14 +73,15 @@ export const TabButton = styled.button<TabButtonProps>`
 export const Panel = styled.div`
   width: 100%;
   background: linear-gradient(180deg, #020308 0%, #060b1c 100%);
-  border: 1px solid rgba(124, 145, 198, 0.42);
+  border: 0px solid rgba(102, 118, 150, 0.36);
   box-shadow: 0 16px 30px rgba(0, 0, 0, 0.45);
-  border-radius: 0 24px 24px 24px;
+  border-radius: 0 36px 36px 36px;
   padding: 30px 32px;
+  margin-bottom: 1rem;
 
-  --text-primary: #edf4ff;
-  --text-secondary: #a7b6d7;
-  --button-secondary-border: rgba(116, 136, 183, 0.45);
+  --text-primary: #e4ebf7;
+  --text-secondary: #98a7c1;
+  --button-secondary-border: rgba(100, 115, 145, 0.45);
   --background: #000000;
   --foreground: #060b1c;
 
@@ -92,8 +92,25 @@ export const Panel = styled.div`
 `;
 
 export const ProductsPlaceholder = styled.p`
-  color: #e8efff;
+  color: #d8e2f3;
   font-size: 18px;
   line-height: 28px;
   font-weight: 500;
+`;
+
+export const BiographyQuestions = styled.div`
+  width: 100%;
+  display: grid;
+  gap: 12px;
+`;
+
+export const BiographyQuestion = styled.p`
+  color: #d6e0f1;
+  font-size: 17px;
+  line-height: 28px;
+  font-weight: 500;
+  background: rgba(24, 34, 56, 0.62);
+  border: 1px solid rgba(110, 127, 162, 0.4);
+  border-radius: 16px;
+  padding: 12px 14px;
 `;
