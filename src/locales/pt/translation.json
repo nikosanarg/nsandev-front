@@ -24,7 +24,11 @@
     "q8": "O que você está construindo agora e qual é seu próximo objetivo?"
   },
   "products": {
-    "loading": "Carregando projetos em produção ou em processo de desploy produtivo"
+    "kaizen": {
+      "title": "Comunidade Kaizen",
+      "description": "Grupo Kaizen é um hub de comunidade para seu ecossistema competitivo e social em torno de Futsal x3 + !elo no Haxball. Resolve a dispersão entre canais, rankings e operações da comunidade, oferecendo um ponto único de interação, visibilidade competitiva e suporte operacional.",
+      "link": "mundokaizen.org"
+    }
   },
   "legacy": {
     "santandev": {

@@ -114,3 +114,62 @@ export const BiographyQuestion = styled.p`
   border-radius: 16px;
   padding: 12px 14px;
 `;
+
+export const ProjectsGrid = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+`;
+
+export const ProjectCard = styled.a`
+  display: flex;
+  flex-direction: column;
+  background: rgba(24, 34, 56, 0.62);
+  border: 1px solid rgba(110, 127, 162, 0.4);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    border-color: rgba(142, 162, 199, 0.8);
+    transform: translateY(-2px);
+  }
+`;
+
+export const ProjectImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #060b1c;
+`;
+
+export const ProjectInfo = styled.div`
+  padding: 14px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+`;
+
+export const ProjectTitle = styled.h3`
+  color: #e4ebf7;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  margin: 0;
+`;
+
+export const ProjectDescription = styled.p`
+  color: #98a7c1;
+  font-size: 15px;
+  line-height: 22px;
+  margin: 0;
+`;
+
+export const ProjectLink = styled.span`
+  color: #8ea2c7;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 4px;
+`;
