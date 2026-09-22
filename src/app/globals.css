@@ -1,6 +1,20 @@
 :root {
   --background: #000000;
   --foreground: #ededed;
+
+  /* Puente hacia kaizen-lib: sólo los tokens que usa LanguageSwitcher.
+     No hay un tono "muted" en esta paleta (dos colores en todo el sitio),
+     así que fg y fg-muted apuntan al mismo; el círculo de hover es lo que
+     marca la interacción, no un cambio de color de ícono. surface-hover,
+     surface-active y ring son nuevos: no había nada a lo que apuntar. */
+  --kz-fg: var(--foreground);
+  --kz-fg-muted: var(--foreground);
+  --kz-surface-hover: rgba(237, 237, 237, 0.08);
+  --kz-surface-active: rgba(237, 237, 237, 0.14);
+  --kz-ring: #8ea2c7;
+  --kz-radius-circle: 50%;
+  --kz-duration-fast: 120ms;
+  --kz-ease: cubic-bezier(0.2, 0, 0, 1);
 }
 
 @media (prefers-color-scheme: dark) {

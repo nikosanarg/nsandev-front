@@ -4,7 +4,8 @@ import "@/i18n";
 import Image from "next/image";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { StyledLangButton, Wrapper } from "./styled";
+import { IconButton } from "kaizen-lib/ui";
+import { ConchaBoton, Wrapper } from "./styled";
 
 type SupportedLocale = "es" | "es-AR" | "pt" | "en";
 
@@ -103,20 +104,17 @@ export default function LanguageSwitcher() {
 
   return (
     <Wrapper aria-label={t("languageSwitcher.ariaLabel")}>
-      <StyledLangButton
-        type="button"
-        onClick={handleLanguageChange}
-        aria-label={t(currentOption.translationKey)}
-        title={t(currentOption.translationKey)}
-      >
-        <Image
-          src={currentOption.flag}
-          alt={t(currentOption.translationKey)}
-          width={28}
-          height={28}
-          priority
-        />
-      </StyledLangButton>
+      <ConchaBoton>
+        <IconButton size="lg" onClick={handleLanguageChange} label={t(currentOption.translationKey)}>
+          <Image
+            src={currentOption.flag}
+            alt=""
+            width={28}
+            height={28}
+            priority
+          />
+        </IconButton>
+      </ConchaBoton>
     </Wrapper>
   );
 }
