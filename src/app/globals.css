@@ -15,6 +15,14 @@
   --kz-radius-circle: 50%;
   --kz-duration-fast: 120ms;
   --kz-ease: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Relieve neumórfico (Relieve, 0.2.1): reemplaza el borde + degradé propio
+     que tenía ConchaBoton. Negro/blanco, sin matiz —la paleta del sitio ya es
+     así (sólo --background y --foreground)—, mismo criterio que el default
+     de la librería. */
+  --kz-relief-out: 3px 3px 7px rgba(0, 0, 0, 0.55), -3px -3px 7px rgba(255, 255, 255, 0.05);
+  --kz-relief-out-strong: 4px 4px 10px rgba(0, 0, 0, 0.65), -4px -4px 10px rgba(255, 255, 255, 0.08);
+  --kz-relief-in: inset 3px 3px 6px rgba(0, 0, 0, 0.6), inset -3px -3px 6px rgba(255, 255, 255, 0.06);
 }
 
 @media (prefers-color-scheme: dark) {
