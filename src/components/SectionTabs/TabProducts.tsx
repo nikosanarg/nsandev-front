@@ -34,6 +34,23 @@ export default function TabProducts() {
           <ProjectLink>{t("products.kaizen.link")}</ProjectLink>
         </ProjectInfo>
       </ProjectCard>
+
+      <ProjectCard href="https://platenzen.com" target="_blank" rel="noopener noreferrer">
+        <ProjectImageWrapper>
+          <Image
+            src="/assets/projects/platenzen.png"
+            alt={t("products.platenzen.title")}
+            fill
+            sizes="(max-width: 720px) 100vw, 320px"
+            style={{ objectFit: "cover" }}
+          />
+        </ProjectImageWrapper>
+        <ProjectInfo>
+          <ProjectTitle>{t("products.platenzen.title")}</ProjectTitle>
+          <ProjectDescription>{t("products.platenzen.description")}</ProjectDescription>
+          <ProjectLink>{t("products.platenzen.link")}</ProjectLink>
+        </ProjectInfo>
+      </ProjectCard>
     </ProjectsGrid>
   );
 }

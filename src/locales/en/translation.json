@@ -28,6 +28,11 @@
       "title": "Kaizen Community",
       "description": "Grupo Kaizen is a community hub for its competitive and social ecosystem built around Futsal x3 + !elo on Haxball. It solves the fragmentation across channels, rankings, and community operations by offering a single point for interaction, competitive visibility, and operational support.",
       "link": "mundokaizen.org"
+    },
+    "platenzen": {
+      "title": "PlatenZen Dashboard",
+      "description": "PlatenZen is a running dashboard that turns activity history into a clear read on progress, goals, and consistency. It solves the lack of training continuity when the data exists but isn't translated into concrete decisions, offering actionable visualizations and gamification components to sustain adherence.",
+      "link": "platenzen.com"
     }
   },
   "legacy": {

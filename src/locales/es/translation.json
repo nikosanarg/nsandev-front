@@ -28,6 +28,11 @@
       "title": "Comunidad Kaizen",
       "description": "Grupo Kaizen es un hub de comunidad para su ecosistema competitivo y social alrededor de Futsal x3 + !elo en Haxball. Resuelve la dispersión entre canales, rankings y operaciones de comunidad, ofreciendo un punto único para interacción, visibilidad competitiva y soporte operativo.",
       "link": "mundokaizen.org"
+    },
+    "platenzen": {
+      "title": "Dashboard PlatenZen",
+      "description": "PlatenZen es un dashboard de running que transforma historiales de actividad en una lectura clara de progreso, objetivos y consistencia. Resuelve la falta de continuidad en el entrenamiento cuando los datos existen pero no se traducen en decisiones concretas, ofreciendo visualizaciones accionables y componentes de gamificación para sostener adherencia.",
+      "link": "platenzen.com"
     }
   },
   "legacy": {
