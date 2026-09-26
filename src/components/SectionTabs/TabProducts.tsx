@@ -25,7 +25,7 @@ export default function TabProducts() {
             alt={t("products.kaizen.title")}
             fill
             sizes="(max-width: 720px) 100vw, 320px"
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover", objectPosition: "top" }}
           />
         </ProjectImageWrapper>
         <ProjectInfo>
@@ -42,7 +42,7 @@ export default function TabProducts() {
             alt={t("products.platenzen.title")}
             fill
             sizes="(max-width: 720px) 100vw, 320px"
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover", objectPosition: "top" }}
           />
         </ProjectImageWrapper>
         <ProjectInfo>
