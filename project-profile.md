@@ -57,7 +57,11 @@ checkout hermano.
 
 ## Interfaz
 
-- Componentes propios con styled-components. No hay librería externa.
+- Componentes propios con styled-components, más `kaizen-lib` (paquete npm compartido con
+  otros fronts del usuario: tokens y componentes de UI). Antes de crear un componente o
+  token nuevo, revisar si `kaizen-lib/ui` o `kaizen-lib/tokens` ya lo resuelve y usarlo o
+  evaluarlo como alternativa — es la invariante "Reutilizar antes de crear" del harness
+  aplicada a esta librería puntual.
 - i18n con i18next.
 
 ## Tests
