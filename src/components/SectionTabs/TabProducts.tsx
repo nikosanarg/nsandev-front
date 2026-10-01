@@ -51,6 +51,23 @@ export default function TabProducts() {
           <ProjectLink>{t("products.platenzen.link")}</ProjectLink>
         </ProjectInfo>
       </ProjectCard>
+
+      <ProjectCard href="https://tuxon.pro" target="_blank" rel="noopener noreferrer">
+        <ProjectImageWrapper>
+          <Image
+            src="/assets/projects/tuxon.png"
+            alt={t("products.tuxon.title")}
+            fill
+            sizes="(max-width: 720px) 100vw, 320px"
+            style={{ objectFit: "cover", objectPosition: "top" }}
+          />
+        </ProjectImageWrapper>
+        <ProjectInfo>
+          <ProjectTitle>{t("products.tuxon.title")}</ProjectTitle>
+          <ProjectDescription>{t("products.tuxon.description")}</ProjectDescription>
+          <ProjectLink>{t("products.tuxon.link")}</ProjectLink>
+        </ProjectInfo>
+      </ProjectCard>
     </ProjectsGrid>
   );
 }

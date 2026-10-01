@@ -33,6 +33,11 @@
       "title": "Dashboard PlatenZen",
       "description": "PlatenZen es un dashboard de running que transforma historiales de actividad en una lectura clara de progreso, objetivos y consistencia. Resuelve la falta de continuidad en el entrenamiento cuando los datos existen pero no se traducen en decisiones concretas, ofreciendo visualizaciones accionables y componentes de gamificación para sostener adherencia.",
       "link": "platenzen.com"
+    },
+    "tuxon": {
+      "title": "Tuxon Lab",
+      "description": "Tuxon Lab es una plataforma de entrenamiento de póker donde el jugador enfrenta manos de Texas Hold'em 6-max respaldadas por datos de simulación. Combina un flujo recreativo con progresión de mano realista y entrenamiento de decisiones con feedback inmediato en cada acción: la línea óptima, el EV perdido y la precisión por street, posición y tipo de spot.",
+      "link": "tuxon.pro"
     }
   },
   "legacy": {
