@@ -21,7 +21,7 @@ export default function TabProducts() {
       <ProjectCard href="https://mundokaizen.org" target="_blank" rel="noopener noreferrer">
         <ProjectImageWrapper>
           <Image
-            src="/assets/projects/kaizen-community.png"
+            src="/assets/projects/kaizen-community.webp"
             alt={t("products.kaizen.title")}
             fill
             sizes="(max-width: 720px) 100vw, 320px"
@@ -38,7 +38,7 @@ export default function TabProducts() {
       <ProjectCard href="https://platenzen.com" target="_blank" rel="noopener noreferrer">
         <ProjectImageWrapper>
           <Image
-            src="/assets/projects/platenzen.png"
+            src="/assets/projects/platenzen.webp"
             alt={t("products.platenzen.title")}
             fill
             sizes="(max-width: 720px) 100vw, 320px"
@@ -55,7 +55,7 @@ export default function TabProducts() {
       <ProjectCard href="https://tuxon.pro" target="_blank" rel="noopener noreferrer">
         <ProjectImageWrapper>
           <Image
-            src="/assets/projects/tuxon.png"
+            src="/assets/projects/tuxon.webp"
             alt={t("products.tuxon.title")}
             fill
             sizes="(max-width: 720px) 100vw, 320px"
