@@ -1,14 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
 import IFrame from "@/components/IFrame";
-import Tabs, { type TabOption } from "@/components/Tabs";
 import * as S from "./styled";
 
-type SagitarSectionId = "alpha" | "beta-v05";
-
 type SagitarSection = {
-  id: SagitarSectionId;
+  id: string;
   label: string;
   iframeTitle: string;
   src: string;
@@ -50,44 +46,29 @@ export default function SagitarSections({
   title,
   description,
 }: SagitarSectionsProps) {
-  const [activeSectionId, setActiveSectionId] = useState<SagitarSectionId>(
-    SECTIONS[0].id
-  );
-
-  const tabOptions = useMemo<TabOption<SagitarSectionId>[]>(
-    () =>
-      SECTIONS.map((section) => ({
-        value: section.id,
-        label: section.label,
-      })),
-    []
-  );
-
-  const activeSection =
-    SECTIONS.find((section) => section.id === activeSectionId) ?? SECTIONS[0];
-
   return (
     <S.Wrapper>
-      <S.Header>
-        <S.Title>{title}</S.Title>
-        <Tabs<SagitarSectionId>
-          ariaLabel="Versiones de Sagitar.io"
-          options={tabOptions}
-          value={activeSectionId}
-          onChange={setActiveSectionId}
-        />
-      </S.Header>
-
-      <S.Panel>
-        <S.Description>{description ?? activeSection.description}</S.Description>
-        <IFrame
-          title={activeSection.iframeTitle}
-          src={activeSection.src}
-          height={activeSection.height}
-          responsiveAspectRatio={activeSection.responsiveAspectRatio}
-          aspectRatio={activeSection.aspectRatio}
-        />
-      </S.Panel>
+      <S.Title>{title}</S.Title>
+      <S.SectionTabs
+        label="Versiones de Sagitar.io"
+        variante="pastilla"
+        items={SECTIONS.map((section) => ({
+          id: section.id,
+          etiqueta: section.label,
+          contenido: (
+            <S.Panel>
+              <S.Description>{description ?? section.description}</S.Description>
+              <IFrame
+                title={section.iframeTitle}
+                src={section.src}
+                height={section.height}
+                responsiveAspectRatio={section.responsiveAspectRatio}
+                aspectRatio={section.aspectRatio}
+              />
+            </S.Panel>
+          ),
+        }))}
+      />
     </S.Wrapper>
   );
 }

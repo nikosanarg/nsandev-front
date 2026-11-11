@@ -1,93 +1,90 @@
 import styled from "styled-components";
+import { Tabs } from "kaizen-lib/ui";
 
-type TabButtonProps = {
-  $active: boolean;
-};
-
-export const Wrapper = styled.section`
+// Pestañas de carpeta pegadas al panel: la lib da roles, teclado y paneles;
+// acá sólo va el aspecto, con selectores de hijo directo para no pintar las
+// pestañas anidadas (Sagitar.io). Sin indicador: la elegida se marca con su fondo.
+export const SectionTabsRoot = styled(Tabs)`
   width: 100%;
-  display: flex;
-  flex-direction: column;
-`;
+  gap: 0;
 
-export const TabsRow = styled.div`
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-  overflow-x: auto;
-  padding-right: 8px;
-  padding-left: 2px;
-`;
+  > [role="tablist"] {
+    align-items: flex-end;
+    gap: 10px;
+    padding-right: 8px;
+    padding-left: 2px;
+    box-shadow: none;
+  }
 
-export const TabButton = styled.button<TabButtonProps>`
-  border: 0px solid rgba(102, 118, 150, 0.36);
-  border-bottom: 0;
-  background: ${({ $active }) =>
-    $active
-      ? "linear-gradient(180deg, #202b43 0%, #141d33 100%)"
-      : "linear-gradient(180deg, #07090f 0%, #0c0f17 100%)"};
-  color: ${({ $active }) => ($active ? "#b8c8e2" : "#c9d3e3")};
-  min-width: 170px;
-  padding: 16px 22px;
-  font-size: 20px;
-  line-height: 20px;
-  font-weight: 500;
-  font-family: var(--font-faculty-glyphic), serif;
-  letter-spacing: -0.2px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  position: relative;
-  border-top-left-radius: 18px;
-  border-top-right-radius: 18px;
+  > [role="tablist"] > [data-indicador] {
+    display: none;
+  }
 
-  ${({ $active }) =>
-    $active &&
-    `
+  > [role="tablist"] > [role="tab"] {
+    background: linear-gradient(180deg, #07090f 0%, #0c0f17 100%);
+    color: #c9d3e3;
+    min-width: 170px;
+    min-height: 0;
+    padding: 16px 22px;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 500;
+    font-family: var(--font-faculty-glyphic), serif;
+    letter-spacing: -0.2px;
+    border-radius: 18px 18px 0 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover:not(:disabled) {
+      color: #e3e9f4;
+    }
+
+    &[aria-selected="true"] {
+      background: linear-gradient(180deg, #202b43 0%, #141d33 100%);
+      color: #b8c8e2;
       padding-top: 13px;
       z-index: 2;
-    `}
 
-  &:hover {
-    color: ${({ $active }) => ($active ? "#cfdbec" : "#e3e9f4")};
+      &:hover {
+        color: #cfdbec;
+      }
+    }
+
+    &:focus-visible {
+      outline-color: #8ea2c7;
+    }
   }
 
-  &:focus-visible {
-    outline: 2px solid #8ea2c7;
-    outline-offset: 2px;
+  > [role="tabpanel"] {
+    width: 100%;
+    background: linear-gradient(180deg, #020308 0%, #060b1c 100%);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.45);
+    border-radius: 0 36px 36px 36px;
+    padding: 30px 32px;
+    margin-bottom: 1rem;
+
+    --text-primary: #e4ebf7;
+    --text-secondary: #98a7c1;
+    --button-secondary-border: rgba(100, 115, 145, 0.45);
+    --background: #000000;
+    --foreground: #060b1c;
   }
 
   @media (max-width: 720px) {
-    min-width: 130px;
-    padding: 13px 16px;
-    font-size: 14px;
-    line-height: 18px;
+    > [role="tablist"] > [role="tab"] {
+      min-width: 130px;
+      padding: 13px 16px;
+      font-size: 14px;
+      line-height: 18px;
 
-    ${({ $active }) =>
-      $active &&
-      `
+      &[aria-selected="true"] {
         padding-top: 10px;
-      `}
-  }
-`;
+      }
+    }
 
-export const Panel = styled.div`
-  width: 100%;
-  background: linear-gradient(180deg, #020308 0%, #060b1c 100%);
-  border: 0px solid rgba(102, 118, 150, 0.36);
-  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.45);
-  border-radius: 0 36px 36px 36px;
-  padding: 30px 32px;
-  margin-bottom: 1rem;
-
-  --text-primary: #e4ebf7;
-  --text-secondary: #98a7c1;
-  --button-secondary-border: rgba(100, 115, 145, 0.45);
-  --background: #000000;
-  --foreground: #060b1c;
-
-  @media (max-width: 720px) {
-    padding: 20px 16px;
-    border-radius: 0 18px 18px 18px;
+    > [role="tabpanel"] {
+      padding: 20px 16px;
+      border-radius: 0 18px 18px 18px;
+    }
   }
 `;
 

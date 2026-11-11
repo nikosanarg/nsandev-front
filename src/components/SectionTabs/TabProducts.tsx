@@ -68,6 +68,23 @@ export default function TabProducts() {
           <ProjectLink>{t("products.tuxon.link")}</ProjectLink>
         </ProjectInfo>
       </ProjectCard>
+
+      <ProjectCard href="https://soga.lol" target="_blank" rel="noopener noreferrer">
+        <ProjectImageWrapper>
+          <Image
+            src="/assets/projects/soga.webp"
+            alt={t("products.soga.title")}
+            fill
+            sizes="(max-width: 720px) 100vw, 320px"
+            style={{ objectFit: "cover", objectPosition: "center" }}
+          />
+        </ProjectImageWrapper>
+        <ProjectInfo>
+          <ProjectTitle>{t("products.soga.title")}</ProjectTitle>
+          <ProjectDescription>{t("products.soga.description")}</ProjectDescription>
+          <ProjectLink>{t("products.soga.link")}</ProjectLink>
+        </ProjectInfo>
+      </ProjectCard>
     </ProjectsGrid>
   );
 }
