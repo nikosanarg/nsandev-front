@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang="en" className={`${facultyGlyphic.variable} ${nunito.variable}`}>
       <body>
         <Providers>{children}</Providers>
-        <StarField modo="fijo" color="#bb7fff" />
+        <StarField modo="fijo" color="#dce6ff" cantidad={120} tamanoMax={1.4} />
       </body>
     </html>
   );
