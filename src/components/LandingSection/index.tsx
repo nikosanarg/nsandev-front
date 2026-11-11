@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Spotlight } from "kaizen-lib/efectos";
 import IFrame from "../IFrame";
 import SagitarSections from "../SagitarSections";
 import {
@@ -14,6 +15,10 @@ interface LandingSectionProps {
   children?: ReactNode;
 }
 
+// Halo en el violeta de las estrellas, bajo: acompaña al puntero sin tapar el
+// contenido. Quieto arriba al centro en táctil y con reduced-motion.
+const HALO = "rgba(187, 127, 255, 0.10)";
+
 const LandingSection = ({
   title,
   src,
@@ -22,20 +27,26 @@ const LandingSection = ({
   children,
 }: LandingSectionProps) => {
   if (!src && !children) {
-    return <SagitarSections title={title} description={description} />;
+    return (
+      <Spotlight color={HALO} style={{ borderRadius: 24 }}>
+        <SagitarSections title={title} description={description} />
+      </Spotlight>
+    );
   }
 
   const content = children ??
     (src ? <IFrame title={title} src={src} height={height} /> : null);
 
   return (
-    <StyledLandingSectionWrapper>
-      <h2>{title}</h2>
-      {description ? (
-        <StyledSectionDescription>{description}</StyledSectionDescription>
-      ) : null}
-      {content}
-    </StyledLandingSectionWrapper>
+    <Spotlight color={HALO} style={{ borderRadius: 24 }}>
+      <StyledLandingSectionWrapper>
+        <h2>{title}</h2>
+        {description ? (
+          <StyledSectionDescription>{description}</StyledSectionDescription>
+        ) : null}
+        {content}
+      </StyledLandingSectionWrapper>
+    </Spotlight>
   );
 };
 

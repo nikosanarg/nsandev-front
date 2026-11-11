@@ -23,6 +23,19 @@
   --kz-relief-out: 3px 3px 7px rgba(0, 0, 0, 0.55), -3px -3px 7px rgba(255, 255, 255, 0.05);
   --kz-relief-out-strong: 4px 4px 10px rgba(0, 0, 0, 0.65), -4px -4px 10px rgba(255, 255, 255, 0.08);
   --kz-relief-in: inset 3px 3px 6px rgba(0, 0, 0, 0.6), inset -3px -3px 6px rgba(255, 255, 255, 0.06);
+
+  /* Tabs y motion (0.2.18): medidas de la fila de pastillas que tenía Tabs
+     propio (4px de aire, píldora) y tiempos de entrada/salida de la lib. */
+  --kz-space-1: 4px;
+  --kz-space-2: 8px;
+  --kz-space-4: 16px;
+  --kz-radius-sm: 6px;
+  --kz-radius-pill: 999px;
+  --kz-font-md: 14px;
+  --kz-duration-enter: 220ms;
+  --kz-duration-exit: 160ms;
+  --kz-ease-enter: cubic-bezier(0.2, 0, 0, 1);
+  --kz-ease-exit: cubic-bezier(0.4, 0, 1, 1);
 }
 
 @media (prefers-color-scheme: dark) {
