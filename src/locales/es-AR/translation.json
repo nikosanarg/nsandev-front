@@ -38,6 +38,11 @@
       "title": "Tuxon Lab",
       "description": "Tuxon Lab es una plataforma de entrenamiento de póker donde el jugador enfrenta manos de Texas Hold'em 6-max respaldadas por datos de simulación. Combina un flujo recreativo con progresión de mano realista y entrenamiento de decisiones con feedback inmediato en cada acción: la línea óptima, el EV perdido y la precisión por street, posición y tipo de spot.",
       "link": "tuxon.pro"
+    },
+    "soga": {
+      "title": "SoGa",
+      "description": "SoGa es un juego social 3D en el navegador ambientado en La Plata: \"Si la vida fuera una simulación…\". Una ciudad compartida con casas y departamentos, fútbol, karting, escape room, un caso de detective, pesca, chat y llamadas de voz. Hecho con Next.js y React Three Fiber, salas en tiempo real con Colyseus y Postgres.",
+      "link": "soga.lol"
     }
   },
   "legacy": {
